@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri - Toko Bakso Cak Putra</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="beranda.css">
+    <style>
+        .gallery-hero{ text-align:center; padding:40px 20px 10px }
+        .gallery-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; padding:20px 40px; }
+        .gallery-item{ background:white; border-radius:12px; overflow:hidden; box-shadow:0 10px 24px rgba(0,0,0,0.06); }
+        .gallery-item img{ width:100%; height:220px; object-fit:cover; display:block; }
+        .gallery-caption{ padding:12px; font-weight:600; color:var(--muted); }
+        .gallery-wrap{ max-width:1100px; margin:0 auto; }
+        @media (max-width:600px){ .gallery-hero h1{ font-size:26px } }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Toko Bakso Cak Putra</div>
+        <ul>
+            <li><a href="beranda.html">Beranda</a></li>
+            <li><a href="galeri.html">Galeri</a></li>
+            <li><a href="hubungi.html">Tentang Penjual</a></li>
+        </ul>
+    </nav>
+
+    <header class="gallery-hero">
+        <h1>Perubahan Lokasi Pabrik</h1>
+        <p>Dokumentasi perpindahan dan pengembangan lokasi pabrik dari tahun ke tahun.</p>
+    </header>
+
+    <section class="gallery-wrap">
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-img"><img src="produksirumah.jpg" alt="2016 - Lokasi awal"></div>
+                <div class="timeline-content">
+                    <h3>2016 — Lokasi Awal (Rumah Produksi)</h3>
+                    <p>Produksi dimulai di lokasi kecil (rumah/toko) dengan kapasitas terbatas. Fokus pada kualitas bahan baku dan resep keluarga.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item alt">
+                <div class="timeline-img"><img src="produksigudang.jpg" alt="2018 - Sewa Gudang / Ekspansi"></div>
+                <div class="timeline-content">
+                    <h3>2018 — Sewa Gudang / Ekspansi</h3>
+                    <p>Pindah ke gudang sewaan untuk menambah kapasitas produksi dan area penyimpanan; mulai gunakan beberapa mesin bantu.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-img"><img src="produksipabrik.jpg" alt="2020 - Lokasi Pabrik Baru"></div>
+                <div class="timeline-content">
+                    <h3>2020 — Pabrik Permanen (Lokasi Baru)</h3>
+                    <p>Pembangunan pabrik permanen dengan area produksi terpisah, ruang QC, dan fasilitas sanitasi untuk standarisasi kualitas.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item alt">
+                <div class="timeline-img"><img src="pabrikcabang.jpg" alt="2022 - Penambahan Lokasi / Cabang"></div>
+                <div class="timeline-content">
+                    <h3>2022 — Penambahan Lokasi / Cabang</h3>
+                    <p>Membuka cabang dan menambah jalur produksi untuk mempercepat distribusi regional.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-img"><img src="produksipenyimpanan.jpg" alt="2024 - Relokasi ke Kawasan Industri"></div>
+                <div class="timeline-content">
+                    <h3>2024 — Relokasi ke Kawasan Industri</h3>
+                    <p>Pindah ke kawasan industri dengan fasilitas logistik lebih baik, ruang penyimpanan dingin, dan kapasitas produksi besar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h3>Toko Bakso Cak Putra</h3>
+                <p>Menyediakan berbagai jenis bakso yang pastinya enak.</p>
+            </div>
+            <div>
+                <h3>Kontak</h3>
+                <p>📱 WhatsApp: +62 856-4869-9978</p>
+                <p>📍 Alamat: Jl. Barito No.01, Rejoagung</p>
+            </div>
+        </div>
+        <p class="copy">© 2025 Toko Bakso Cak Putra. Bakso paling enak.</p>
+    </footer>
+
+</body>
+</html>

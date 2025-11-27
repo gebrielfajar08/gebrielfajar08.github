@@ -1,0 +1,191 @@
+:root{
+    --accent:#b33a2a;
+    --accent-soft:#ffe9e5;
+    --muted:#6b6b6b;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    /* background image — reuse same photo file as example; change to your pabrik photo if available */
+    background-image: linear-gradient(rgba(255,250,248,0.80), rgba(255,250,248,0.80)), url('bakso hubungi.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f8faf9;
+}
+
+/* NAVBAR */
+.navbar {
+    background: #b33a2a;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    padding: 20px 40px;
+    font-size: 14px;
+    color: #444;
+    background: transparent; /* allow bg photo behind */
+}
+
+/* Detail Container */
+.detail-container {
+    display: flex;
+    padding: 0 40px 40px;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* Image Box */
+.image-box img {
+    width: 500px;
+    border-radius: 15px;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Info */
+.product-info {
+    flex: 1;
+    max-width: 550px;
+}
+
+.tag {
+    display: inline-block;
+    background: #d7f2d7;
+    color: #b33a2a;
+    padding: 5px 12px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+    .tag {
+        display: inline-block;
+        background: var(--accent-soft);
+        color: var(--accent);
+        padding: 6px 14px;
+        border-radius: 6px;
+        margin-bottom: 10px;
+        font-weight:600;
+    }
+
+.product-info h2 {
+    font-size: 28px;
+    color: #b33a2a;
+}
+    .product-info h2 {
+        font-size: 30px;
+        color: var(--accent);
+        font-weight:700;
+    }
+    .price {
+        font-size: 20px;
+        margin: 10px 0;
+        color: var(--accent);
+        font-weight:600;
+    }
+
+.price {
+    font-size: 20px;
+    margin: 10px 0;
+    color: #b33a2a;
+}
+
+.product-info h4 {
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-primary {
+    padding: 10px 16px;
+    background: #b33a2a;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+    .btn-primary {
+        padding: 10px 16px;
+        background: linear-gradient(180deg,var(--accent) 0%, #a53224 100%);
+        border: none;
+        color: white;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight:600;
+    }
+
+.btn-secondary {
+    padding: 10px 16px;
+    background: #e8e8e8;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Extra Info */
+.extra-info {
+    background: white;
+    margin: 20px 40px 40px;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #b33a2a;
+}
+    .extra-info {
+        background: white;
+        margin: 20px 40px 40px;
+        padding: 20px;
+        border-radius: 10px;
+        border-left: 4px solid var(--accent);
+        box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+    }
+
+.extra-info ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.extra-info li {
+    margin-bottom: 6px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .detail-container {
+        flex-direction: column;
+    }
+
+    .image-box img {
+        width: 100%;
+    }
+}

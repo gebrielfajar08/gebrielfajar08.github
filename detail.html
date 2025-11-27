@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Produk</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="detail.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Toko Bakso Cak Putra</div>
+        <ul class="nav-links">
+            <li><a href="beranda.html">Beranda</a></li>
+            <li><a href="galeri.html">Galeri</a></li>
+            <li><a href="hubungi.html">Tentang Penjual</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">Beranda / Detail Produk</div>
+
+        <!-- Detail Produk -->
+        <section class="detail-container">
+
+        <!-- Gambar -->
+        <div class="image-box">
+            <img id="product-image" src="bakso hubungi.jpg" alt="Produk">
+        </div>
+
+        <!-- Informasi Produk -->
+        <div class="product-info">
+
+            <span id="product-tag" class="tag">Tanaman Hias</span>
+            <h2 id="product-title">Judul Produk</h2>
+            <h3 id="product-price" class="price">Rp0</h3>
+
+            <h4>Deskripsi Produk</h4>
+            <p id="product-desc">
+                Deskripsi produk akan muncul di sini.
+            </p>
+
+            <h4>Makanan enak</h4>
+            <p id="product-tips">
+                Tips perawatan akan muncul di sini.
+            </p>
+
+            <!-- Tombol -->
+            <div class="buttons">
+                <a id="wa-button" class="btn-primary" href="#">Beli via WhatsApp</a>
+                <a class="btn-secondary" href="beranda.html">← Kembali ke Beranda</a>
+            </div>
+
+        </div>
+
+        </section>
+    </div>
+
+    <!-- Info tambahan -->
+    <section class="extra-info">
+        <h4>Informasi Tambahan:</h4>
+        <ul>
+            <li>Pembelian dilakukan melalui WhatsApp</li>
+            <li>Harga belum termasuk ongkos kirim</li>
+            <li>Pembayaran via Transfer Bank atau COD (tertentu lokasi)</li>
+            <li>Pengiriman menggunakan jasa ekspedisi terpercaya</li>
+        </ul>
+    </section>
+
+        <script>
+            // Data produk disesuaikan dengan isi `beranda.html` (nama gambar di folder PERTEMUAN 16)
+            const products = {
+                mercon: {
+                    title: 'Bakso Mercon',
+                    tag: 'Bakso mercon',
+                    image: 'bakso mercon.jpg',
+                    price: 'Rp15.000',
+                    desc: 'Bakso dengan olahan cabai dan daging yang nampol pedesnya.',
+                    tips: 'Sajikan hangat dengan kuah dan sambal sesuai selera.',
+                    waText: 'Halo, saya mau pesan Bakso Mercon. Apakah masih tersedia?'
+                },
+                beranak: {
+                    title: 'Bakso Beranak + Urat',
+                    tag: 'Bakso Beranak + urat',
+                    image: 'bakso beranak.jpg',
+                    price: 'Rp20.000',
+                    desc: 'Bakso pilihan yang satu ini dibikin nagih terus.',
+                    tips: 'Cocok disajikan dengan mie dan kuah kaldu panas.',
+                    waText: 'Halo, saya mau pesan Bakso Beranak + Urat. Apakah masih tersedia?'
+                },
+                keju: {
+                    title: 'Bakso Keju',
+                    tag: 'Bakso Keju',
+                    image: 'bakso kejuu.jpg',
+                    price: 'Rp13.000',
+                    desc: 'Bakso menu satu ini bakal dibikin kangen sama kejunya.',
+                    tips: 'Potong dan sajikan segera agar keju tetap meleleh saat disantap.',
+                    waText: 'Halo, saya mau pesan Bakso Keju. Apakah masih tersedia?'
+                }
+            };
+
+            function getQueryProduct() {
+                const params = new URLSearchParams(window.location.search);
+                return params.get('product');
+            }
+
+            function populateProduct(key) {
+                const data = products[key] || products['mercon'];
+                document.getElementById('product-title').innerText = data.title;
+                document.getElementById('product-tag').innerText = data.tag;
+                const img = document.getElementById('product-image');
+                img.src = data.image;
+                img.alt = data.title;
+                // fallback jika gambar tidak ditemukan: tampilkan SVG placeholder inline
+                img.onerror = function() {
+                    this.onerror = null;
+                    this.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400"><rect width="100%" height="100%" fill="%23f3f4f6"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="%23888" font-size="20">Gambar tidak tersedia</text></svg>';
+                };
+                document.getElementById('product-price').innerText = data.price;
+                document.getElementById('product-desc').innerText = data.desc;
+                document.getElementById('product-tips').innerText = data.tips;
+                // update WA button (gunakan nomor contoh, ganti sesuai kebutuhan)
+                const waNumber = '+6285648699978';
+                const waUrl = 'https://wa.me/' + waNumber + '?text=' + encodeURIComponent(data.waText);
+                const waBtn = document.getElementById('wa-button');
+                waBtn.href = waUrl;
+                // update title
+                document.title = 'Detail Produk - ' + data.title;
+            }
+
+            // on load
+            (function(){
+                const key = getQueryProduct();
+                populateProduct(key);
+            })();
+        </script>
+
+</body>
+</html>
